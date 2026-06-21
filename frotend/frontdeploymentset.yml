@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: my-deploy-frotend
+spec:
+  replicas: 4
+  selector:
+    matchLabels:
+      app: deployment
+  template:
+    metadata:
+      labels:
+        app: deployment
+    spec:
+      containers:
+        - name: backend
+          image: digvijaykhairnar/frotend:latest
+          ports:
+            - containerPort: 80
