@@ -12,6 +12,32 @@ chmod 700 get_helm.sh
 ./get_helm.sh
 
 
+# run this 
+curl --silent --location "https://github.com/weaveworks/eksctl/releases/latest/download/eksctl_$(uname -s)_amd64.tar.gz" | tar xz -C /tmp
+
+sudo mv /tmp/eksctl /usr/local/bin
+
+eksctl version
+
+
+# oidc-provider
+
+eksctl utils associate-iam-oidc-provider \
+  --cluster my-eks \
+  --region eu-north-1 \
+  --approve
+
+
+# Create IAM Service Account
+eksctl create iamserviceaccount \
+  --name ebs-csi-controller-sa \
+  --namespace kube-system \
+  --cluster my-eks \
+  --role-name AmazonEKS_EBS_CSI_DriverRole \
+  --region eu-north-1 \
+  --override-existing-serviceaccounts \
+  --attach-policy-arn arn:aws:iam::aws:policy/service-role/AmazonEBSCSIDriverPolicy \
+  --approve
 # Step 2: Install AWS EBS CSI Driver
 
 # Add Helm Repository
