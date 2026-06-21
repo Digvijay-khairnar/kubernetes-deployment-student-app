@@ -1,3 +1,5 @@
+# PROCESS 1
+
 # Step 1:
 
 follow instrections of 
@@ -33,7 +35,32 @@ kubectl apply -f  statfullset.yml
 
 
 
-#
+# check the database inside the container 
 kubectl exec -it mariadb-0 -- mariadb -u root -p
+
+
+
+
+# PROCESS 2
+
+# if you are not interested in kuberneties 
+
+# Step 1:
+
+follow instrections of 
+
+install-helm-CBS-csi-drive(1)
+
+file 
+
+# step 2:
+
+vim overall.yml
+
+kubectl apply -f overall.yml
+
+
+
+
 
 
