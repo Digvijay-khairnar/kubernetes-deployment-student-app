@@ -1,9 +1,9 @@
 
 # Step 1: helm instalation
 
-Helm now has an installer script that will automatically grab the latest version of Helm and install it locally.
+# Helm now has an installer script that will automatically grab the latest version of Helm and install it locally.
 
-You can fetch that script, and then execute it locally. It's well documented so that you can read through it and understand what it is doing before you run it.
+# You can fetch that script, and then execute it locally. It's well documented so that you can read through it and understand what it is doing before you run it.
 
 # link / script 
 
@@ -44,10 +44,4 @@ kubectl get pods -n kube-system -l app.kubernetes.io/name=aws-ebs-csi-driver
 # Check CSI drivers
 
 kubectl get csidrivers
-
-# Step 3: Create Storage Class
-# Step 4: Create PVC and Test
-
-from 
-# ebs-sc-pvc.yaml
 

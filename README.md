@@ -2,10 +2,7 @@
 End-to-end Kubernetes deployment examples demonstrating container orchestration, networking, storage, scaling, and high availability.
 
 
-# Step 1 :  first Follow Database directory
+# Step 1 :  first Follow Database directory REDME.md file 
 
-1) install-helm-CBS-csi-drive(1)
-
-2) ebs-sc-pvc.yml
-
-3) 
+all configuration of database 
+with storage class and persistent volume clame 
