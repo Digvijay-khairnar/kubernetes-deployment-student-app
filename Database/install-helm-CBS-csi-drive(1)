@@ -1,0 +1,53 @@
+
+# Step 1: helm instalation
+
+Helm now has an installer script that will automatically grab the latest version of Helm and install it locally.
+
+You can fetch that script, and then execute it locally. It's well documented so that you can read through it and understand what it is doing before you run it.
+
+# link / script 
+
+curl -fsSL -o get_helm.sh https://raw.githubusercontent.com/helm/helm/main/scripts/get-helm-4
+chmod 700 get_helm.sh
+./get_helm.sh
+
+
+# Step 2: Install AWS EBS CSI Driver
+
+# Add Helm Repository
+
+helm repo add aws-ebs-csi-driver https://kubernetes-sigs.github.io/aws-ebs-csi-driver
+helm repo update
+
+# It connects your EKS cluster with AWS IAM using OIDC (OpenID Connect), so Kubernetes pods can assume IAM roles securely.
+
+eksctl utils associate-iam-oidc-provider --region=eu-north-1 --cluster=my-eks --approve
+
+
+
+# Install EBS CSI Driver
+
+
+helm upgrade --install aws-ebs-csi-driver \
+  aws-ebs-csi-driver/aws-ebs-csi-driver \
+  --namespace kube-system \
+  --set controller.serviceAccount.create=false \
+  --set controller.serviceAccount.name=ebs-csi-controller-sa
+
+
+ # Verify Installation
+
+# Check if pods are running
+
+kubectl get pods -n kube-system -l app.kubernetes.io/name=aws-ebs-csi-driver
+
+# Check CSI drivers
+
+kubectl get csidrivers
+
+# Step 3: Create Storage Class
+# Step 4: Create PVC and Test
+
+from 
+# ebs-sc-pvc.yaml
+
