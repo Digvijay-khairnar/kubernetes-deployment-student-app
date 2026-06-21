@@ -39,11 +39,13 @@ kubectl apply -f  statfullset.yml
 kubectl exec -it mariadb-0 -- mariadb -u root -p
 
 
+.
+.
 
 
 # PROCESS 2
 
-# if you are not interested in kuberneties 
+# if you are not interested in learning kuberneties 
 
 # Step 1:
 
