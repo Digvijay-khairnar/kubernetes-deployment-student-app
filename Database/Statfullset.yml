@@ -34,7 +34,7 @@ spec:
           valueFrom:
             secretKeyRef:
               name: mariadb-secret
-              key: MYSQL_DATABAS
+              key: MYSQL_DATABASE
 
         volumeMounts:
         - name: mariadb-data
