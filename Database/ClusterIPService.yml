@@ -3,7 +3,7 @@ kind: Service
 metadata:
   name: mariadb
 spec:
-  clusterIP: None
+  clusterIP: 10.100.0.5
   selector:
     app: mariadb
   ports:
