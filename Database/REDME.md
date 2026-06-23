@@ -38,6 +38,8 @@ kubectl apply -f  statfullset.yml
 # check the database inside the container 
 kubectl exec -it mariadb-0 -- mariadb -u root -p
 
+password= 123
+
 
 .
 .
