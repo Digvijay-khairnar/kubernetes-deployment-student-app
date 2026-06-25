@@ -12,3 +12,7 @@ with storage class and persistent volume clame
 
 all configuration of backend
 with deployment and all 
+
+
+
+new update 25 6 
